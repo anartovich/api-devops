@@ -2,7 +2,7 @@
 	"name": "Mav Store",
 	"path": "/mavstore",
 	"state": "published",
-	"version": "1.0.2",
+	"version": "1.0.0",
 	"organization": "API Development",
   "customProperties": {
   },
@@ -30,13 +30,13 @@
 		               "scopes":"resource.WRITE, resource.READ, resource.ADMIN",
 		               "removeCredentialsOnSuccess":true,
 		               "implicitGrantEnabled":true,
-		               "implicitGrantLoginEndpointUrl":"https://maverick.demo.axway.com:8089/api/oauth/authorize",
+		               "implicitGrantLoginEndpointUrl":"https://phx41.demo.axway.com:8089/api/oauth/authorize",
 		               "implicitGrantLoginTokenName":"access_token",
 		               "authCodeGrantTypeEnabled":true,
-		               "authCodeGrantTypeRequestEndpointUrl":"https://maverick.demo.axway.com:8089/api/oauth/authorize",
+		               "authCodeGrantTypeRequestEndpointUrl":"https://phx41.demo.axway.com:8089/api/oauth/authorize",
 		               "authCodeGrantTypeRequestClientIdName":"client_id",
 		               "authCodeGrantTypeRequestSecretName":"client_secret",
-		               "authCodeGrantTypeTokenEndpointUrl":"https://maverick.demo.axway.com:8089/api/oauth/token",
+		               "authCodeGrantTypeTokenEndpointUrl":"https://phx41.demo.axway.com:8089/api/oauth/token",
 		               "authCodeGrantTypeTokenEndpointTokenName":"access_code"
 		            }
 		         }
@@ -45,7 +45,7 @@
      ],
 	"apiDefinition": "mavStore.json",
 	"image": "Market.png",
-	"vhost": "maverick.demo.axway.com:8065",
+	"vhost": "phx41.demo.axway.com:8065",
 	"tags": {
 		"lob": ["sales"],
 		"asset": ["store"],

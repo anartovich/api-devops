@@ -6,7 +6,7 @@ parameters:
 - name: host
   displayName: API Manager Hostname
   type: string
-  default: maverick.demo.axway.com
+  default: phx41.demo.axway.com
 - name: username
   displayName: API Manager Username
   type: string
@@ -40,11 +40,11 @@ jobs:
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'clean exec:java'
-      options: '-Dexec.args="-h ${{ parameters.host }} -u ${{ parameters.username }} -p $(password) -c api_config.json -s api-env -f true -returnCodeMapping ${{ parameters.returnCodeMapping }}"'
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '12.x'
-  - script: npm install -g newman
-    displayName: Install Postman- newman
+      options: '-Dexec.args="-h ${{ parameters.host }} -u ${{ parameters.username }} -p $(password) -c api_config.json -f true -returnCodeMapping ${{ parameters.returnCodeMapping }}"'
+  # - task: NodeTool@0
+  #   inputs:
+  #     versionSpec: '12.x'
+  # - script: npm install -g newman
+  #   displayName: Install Postman- newman
 #  - script: newman run bhf.postman_collection.json --insecure
 #    displayName: Run Tests
