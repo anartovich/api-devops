@@ -1,54 +1,62 @@
 {
-	"name": "Mav Store",
-	"path": "/mavstore",
-	"state": "published",
-	"version": "1.0.0",
-	"organization": "API Development",
-  "customProperties": {
-  },
-  "outboundProfiles": {
-		"_default": {
-			"requestPolicy": "",
-      "responsePolicy": ""
-		}
-	},
-  "securityProfiles": [
-     	{
-     		"name": "_default",
-     		"isDefault": true,
-		      "devices":[
-		         {
-		            "type":"oauth",
-		            "name":"OAuth",
-		            "order":1,
-		            "properties":{
-		               "tokenStore":"OAuth Access Token Store",
-		               "accessTokenLocation":"HEADER",
-		               "authorizationHeaderPrefix":"Bearer",
-		               "accessTokenLocationQueryString":"",
-		               "scopesMustMatch":"Any",
-		               "scopes":"resource.WRITE, resource.READ, resource.ADMIN",
-		               "removeCredentialsOnSuccess":true,
-		               "implicitGrantEnabled":true,
-		               "implicitGrantLoginEndpointUrl":"https://phx41.demo.axway.com:8089/api/oauth/authorize",
-		               "implicitGrantLoginTokenName":"access_token",
-		               "authCodeGrantTypeEnabled":true,
-		               "authCodeGrantTypeRequestEndpointUrl":"https://phx41.demo.axway.com:8089/api/oauth/authorize",
-		               "authCodeGrantTypeRequestClientIdName":"client_id",
-		               "authCodeGrantTypeRequestSecretName":"client_secret",
-		               "authCodeGrantTypeTokenEndpointUrl":"https://phx41.demo.axway.com:8089/api/oauth/token",
-		               "authCodeGrantTypeTokenEndpointTokenName":"access_code"
-		            }
-		         }
-		      ]
-     	}
-     ],
-	"apiDefinition": "mavStore.json",
-	"image": "Market.png",
-	"vhost": "phx41.demo.axway.com:8065",
-	"tags": {
-		"lob": ["sales"],
-		"asset": ["store"],
-    "product": ["petstore"]
-	}
+   "name": "Mav Store",
+   "path": "/mavstore",
+   "state": "published",
+   "version": "1.0.0",
+   "organization": "API Development",
+   "customProperties": {},
+   "outboundProfiles": {
+      "_default": {
+         "requestPolicy": "",
+         "responsePolicy": "Trace response"
+      }
+   },
+   "securityProfiles": [
+      {
+         "name": "_default",
+         "isDefault": true,
+         "devices": [
+            {
+               "type": "oauth",
+               "name": "OAuth",
+               "order": 1,
+               "properties": {
+                  "tokenStore": "<key type='OAuth2StoresGroup'><id field='name' value='OAuth2 Stores'/><key type='AccessTokenStoreGroup'><id field='name' value='Access Token Stores'/><key type='AccessTokenPersist'><id field='name' value='OAuth Access Token Store'/></key></key></key>",
+                  "accessTokenLocation": "HEADER",
+                  "authorizationHeaderPrefix": "Bearer",
+                  "accessTokenLocationQueryString": "",
+                  "scopesMustMatch": "Any",
+                  "scopes": "resource.WRITE, resource.READ, resource.ADMIN",
+                  "removeCredentialsOnSuccess": true,
+                  "implicitGrantEnabled": false,
+                  "implicitGrantLoginEndpointUrl": "https://phx41.demo.axway.com:8089/api/oauth/authorize",
+                  "implicitGrantLoginTokenName": "access_token",
+                  "authCodeGrantTypeEnabled": true,
+                  "authCodeGrantTypeRequestEndpointUrl": "https://phx41.demo.axway.com:8089/api/oauth/authorize",
+                  "authCodeGrantTypeRequestClientIdName": "client_id",
+                  "authCodeGrantTypeRequestSecretName": "client_secret",
+                  "authCodeGrantTypeTokenEndpointUrl": "https://phx41.demo.axway.com:8089/api/oauth/token",
+                  "authCodeGrantTypeTokenEndpointTokenName": "access_code",
+                  "clientCredentialsGrantTypeEnabled": "true",
+                  "clientCredentialsGrantTypeTokenEndpointUrl": "https://phx41.demo.axway.com:8089/api/oauth/token",
+                  "clientCredentialsGrantTypeTokenName": "access_token"
+               }
+            }
+         ]
+      }
+   ],
+   "apiDefinition": "mavStore.json",
+   "image": "Market.png",
+   "vhost": "phx41.demo.axway.com:8065",
+   "tags": {
+      "lob": [
+         "sales"
+      ],
+      "asset": [
+         "store"
+      ],
+      "product": [
+         "petstore"
+      ]
+   }
 }
